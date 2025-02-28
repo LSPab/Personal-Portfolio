@@ -1,0 +1,22 @@
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    /* Space links evenly */
+    align-items: center;
+    /* Center the items vertically */
+    background-color: rgb(15, 0, 0);
+    /* Header background color */
+    width: 100%;
+    padding: 10px 400px;
+    /* Add padding for spacing */
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+    
