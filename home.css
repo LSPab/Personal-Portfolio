@@ -8,15 +8,29 @@
     background-color: rgb(15, 0, 0);
     /* Header background color */
     width: 100%;
-    padding: 10px 400px;
+    padding: 10px 20px;
     /* Add padding for spacing */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevents horizontal scrolling */
 }
 
 .body {
     display: flex;
     align-items: center;
-    flex-direction: column;
     width: 100%;
     margin: 0;
+    flex-direction: column;
 }
-    
+
+.Hero-image {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0;
+}
