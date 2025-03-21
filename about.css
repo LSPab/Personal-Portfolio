@@ -1,0 +1,50 @@
+.image-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.image-area img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.image-area::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to bottom, transparent rgba(101, 242, 238, 0));
+    pointer-events: none;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+}
+
+.fade-img {
+     position: relative;
+}
+
+.fade-img::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to bottom, transparent rgba(101, 242, 238, 1));
+    pointer-events: none;
+}
