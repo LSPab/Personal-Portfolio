@@ -117,3 +117,96 @@ html {
     height: 100%;
     object-fit: cover;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    padding: 1rem;
+    display: flex;
+    background-color: black;
+}
+
+.off-screen-menu {
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+}
+
+.off-screen-menu.active {
+    right: 0;
+}
+
+.ham-menu {
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: relative;
+    z-index: 11;
+    cursor: pointer;
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: purple;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+}
+
+li {
+    color: white;
+}
+
+.content {
+    transition: filter 0.3s ease;
+}
+
+/* Apply blur effect when menu is active */
+.content.blur {
+    filter: blur(8px);
+}
+
+.pointer {
+    cursor: pointer;
+}
