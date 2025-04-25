@@ -4,24 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Digital Projects - Leo's Portfolio</title>
+    <link rel="stylesheet" href="websites.css">
+    <script src="hamburger.js" defer></script>
+    <script src="slideshow.js" defer></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-    <header class="header">
-        <!-- Header content --->
-    </header>
-
-    <div class="body">
-        <div class="image-area">
-            <img class="fade-img:after" src="circuitboard.index.jpg" alt="img">
-        </div>
+    <div class="off-screen-menu">
+        <ul>
+            <li class="pointer"><a href="index.html">Home</a></li>
+            <li class="pointer"><a href="physical-projects.html">Physical Projects</a></li>
+            <li class="pointer"><a href="digital-projects.html">Digital Projects</a></li>
+            <li class="pointer"><a href="CV.html">Resume</a></li>
+        </ul>
     </div>
+    <nav>
+        <div class="logo">
+            <a href="index.html">Leo</a>
+        </div>
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="content">
+        <header class="page-header">
+            <div class="header-text">
+                <h1>Digital Projects</h1>
+                <p>Websites, applications, and code</p>
+            </div>
+        </header>
 
+        <section class="featured-project">
+            <h2>Featured Project</h2>
+            <div class="slideshow-container">
+                <div class="slideshow">
+                    <div class="slide">
+                        <img src="/api/placeholder/800/500" alt="Website homepage">
+                        <div class="slide-caption">Homepage Design</div>
+                    </div>
+                    <div class="slide">
+                        <img src="/api/placeholder/800/500" alt="Website about page">
+                        <div class="slide-caption">About Page</div>
+                    </div>
+                    <div class="slide">
+                        <img src="/api/placeholder/800/500" alt="Website contact form">
+                        <div class="slide-caption">Contact Form</div>
+                    </div>
+                    <div class="slide">
+                        <img src="/api/placeholder/800/500" alt="Website mobile view">
+                        <div class="slide-caption">Mobile Responsive Design</div>
+                    </div>
+                </div>
+                <button class="prev-btn">&#10094;</button>
+                <button class="next-btn">&#10095;</button>
+                <div class="dots-container"></div>
+            </div>
+            <div class="project-description">
+                <h3>E-Commerce Website</h3>
+                <p>A fully responsive e-commerce platform built with modern web technologies. Features include user
+                    authentication, product filtering, shopping cart functionality, and secure checkout.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                </div>
+                <a href="#" class="button">View Project</a>
+            </div>
+        </section>
+
+        <section class="project-grid">
+            <h2>More Digital Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="Project 1">
+                    <h3>Portfolio Website</h3>
+                    <p>A minimalist portfolio website for a photographer showcasing their work with a clean, modern
+                        design.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <a href="#" class="button">View Details</a>
+                </div>
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="Project 2">
+                    <h3>Weather App</h3>
+                    <p>A weather application that provides real-time weather updates using data from a public API.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">API</span>
+                    </div>
+                    <a href="#" class="button">View Details</a>
+                </div>
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="Project 3">
+                    <h3>Task Management System</h3>
+                    <p>A productivity tool that helps users organize tasks, set deadlines, and track progress.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <a href="#" class="button">View Details</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Leo's Portfolio. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

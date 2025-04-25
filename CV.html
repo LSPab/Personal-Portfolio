@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Leo's Resume</title>
     <link rel="stylesheet" href="CV.css">
     <script src="hamburger.js" defer></script>
     <link
@@ -15,13 +15,17 @@
 <body>
     <div class="off-screen-menu">
         <ul>
-            <li class="pointer">Projects</li>
-            <li class="pointer">Websites</li>
-            <li class="pointer">CV</li>
+            <li class="pointer"><a href="index.html">Home</a></li>
+            <li class="pointer"><a href="physical-projects.html">Physical Projects</a></li>
+            <li class="pointer"><a href="digital-projects.html">Digital Projects</a></li>
+            <li class="pointer"><a href="resume.html">Resume</a></li>
         </ul>
     </div>
 
     <nav>
+        <div class="logo">
+            <a href="index.html">Leo</a>
+        </div>
         <div class="ham-menu">
             <span></span>
             <span></span>
@@ -30,6 +34,163 @@
     </nav>
 
     <div class="content">
+        <header class="resume-header">
+            <h1>My Curriculum Vitae</h1>
+            <p>Professional experience & skills</p>
+        </header>
+
+        <div class="resume-container">
+            <aside class="sidebar">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <img src="smouldering.jpg" alt="Leo profile">
+                    </div>
+                    <h2>Leo</h2>
+                    <p class="title">Developer & Designer</p>
+                </div>
+
+                <div class="contact-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><strong>Email:</strong> leo@example.com</li>
+                        <li><strong>Phone:</strong> (123) 456-7890</li>
+                        <li><strong>Location:</strong> City, Country</li>
+                        <li><strong>Website:</strong> leodesign.com</li>
+                    </ul>
+                </div>
+
+                <div class="skills-section">
+                    <h3>Skills</h3>
+                    <div class="skill">
+                        <span>HTML/CSS</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Hardware Design</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>UX/UI Design</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Project Management</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <section class="resume-section">
+                    <h2>About Me</h2>
+                    <p>I am a versatile developer and designer with expertise in both hardware and software projects. My
+                        passion lies in creating intuitive, efficient solutions that bridge the gap between physical and
+                        digital experiences. With a keen eye for detail and a commitment to excellence, I approach each
+                        project as an opportunity to innovate and deliver outstanding results.</p>
+                </section>
+
+                <section class="resume-section">
+                    <h2>Experience</h2>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Senior Developer</h3>
+                            <span class="date">2023 - Present</span>
+                        </div>
+                        <h4>TechCorp Industries</h4>
+                        <ul>
+                            <li>Lead development of integrated hardware-software solutions</li>
+                            <li>Managed a team of 5 junior developers across multiple projects</li>
+                            <li>Implemented new UI/UX standards resulting in 35% improvement in user satisfaction</li>
+                            <li>Designed circuit board layouts for IoT devices</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Frontend Developer</h3>
+                            <span class="date">2020 - 2023</span>
+                        </div>
+                        <h4>Digital Solutions Inc.</h4>
+                        <ul>
+                            <li>Developed responsive web applications for clients across various industries</li>
+                            <li>Collaborated with UX designers to implement intuitive user interfaces</li>
+                            <li>Optimized website performance, achieving 40% faster load times</li>
+                            <li>Created custom JavaScript libraries for specialized client needs</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Hardware Intern</h3>
+                            <span class="date">2019 - 2020</span>
+                        </div>
+                        <h4>ElectroTech Labs</h4>
+                        <ul>
+                            <li>Assisted senior engineers in prototype development</li>
+                            <li>Conducted testing and quality assurance for new hardware components</li>
+                            <li>Documented technical processes and created user manuals</li>
+                            <li>Participated in design thinking workshops for product innovation</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2>Education</h2>
+
+                    <div class="education-item">
+                        <div class="experience-header">
+                            <h3>Master of Science in Computer Engineering</h3>
+                            <span class="date">2018 - 2020</span>
+                        </div>
+                        <h4>University of Technology</h4>
+                        <p>Specialized in embedded systems and hardware design. Graduated with honors.</p>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="experience-header">
+                            <h3>Bachelor of Science in Computer Science</h3>
+                            <span class="date">2014 - 2018</span>
+                        </div>
+                        <h4>State University</h4>
+                        <p>Focus on web development and user interface design. Dean's List all semesters.</p>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2>Certifications</h2>
+                    <ul class="certification-list">
+                        <li>Certified Web Developer (CWD) - 2021</li>
+                        <li>Hardware Design Professional (HDP) - 2022</li>
+                        <li>Agile Project Management - 2023</li>
+                        <li>User Experience Design - 2023</li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+
+        <div class="resume-action">
+            <a href="#" class="button">Download Full CV (PDF)</a>
+        </div>
     </div>
 
+    <footer>
+        <p>&copy; 2025 Leo's Portfolio. All rights reserved.</p>
+    </footer>
 </body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Leo's Portfolio</title>
     <link rel="stylesheet" href="index.css">
     <script src="hamburger.js" defer></script>
     <link
@@ -15,13 +15,17 @@
 <body>
     <div class="off-screen-menu">
         <ul>
-            <li class="pointer">Projects</li>
-            <li class="pointer">Websites</li>
-            <li class="pointer">CV</li>
+            <li class="pointer"><a href="index.html">Home</a></li>
+            <li class="pointer"><a href="physical-projects.html">Physical Projects</a></li>
+            <li class="pointer"><a href="digital-projects.html">Digital Projects</a></li>
+            <li class="pointer"><a href="CV.css">Resume</a></li>
         </ul>
     </div>
 
     <nav>
+        <div class="logo">
+            <a href="index.html">Leo</a>
+        </div>
         <div class="ham-menu">
             <span></span>
             <span></span>
@@ -30,31 +34,48 @@
     </nav>
 
     <div class="content">
-        <div class="body">
-            <a href="about.html">Leo</a>
-            <div class="Hero-image">
-                <img id="hero-image" src="smouldering.jpg" alt="picture 1" href="about.html">
+        <header class="hero">
+            <div class="hero-text">
+                <h1>Leo's Portfolio</h1>
+                <p>Developer & Designer</p>
             </div>
-        </div>
+            <div class="hero-image">
+                <img id="hero-image" src="smouldering.jpg" alt="Leo's profile picture">
+            </div>
+        </header>
 
-
-
-        <div class="body1">
-            <div class="box">
-                <div class="box2">
-                    <img src="circuitboard.index.jpg" alt="img" class="body2">
-                    Physical projects
+        <section class="project-categories">
+            <h2>My Work</h2>
+            <div class="category-container">
+                <div class="category-box">
+                    <a href="physical-projects.html">
+                        <img src="circuitboard.index.jpg" alt="Physical projects" class="category-image">
+                        <h3>Physical Projects</h3>
+                        <p>Hardware, electronics, and more</p>
+                    </a>
                 </div>
-                <div class="box2">
-                    <img src="circuitboard.index.jpg" alt="img" class="body2">
-                    Websites
-                </div>
 
-
-                <!-- box 2 -->
-                <div class="box">
-                    hfja
+                <div class="category-box">
+                    <a href="digital-projects.html">
+                        <img src="circuitboard.index.jpg" alt="Digital projects" class="category-image">
+                        <h3>Digital Projects</h3>
+                        <p>Websites, applications, and code</p>
+                    </a>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="about-brief">
+            <h2>About Me</h2>
+            <p>I'm a passionate creator who works at the intersection of hardware and software. With a background in
+                both digital and physical design, I bring a unique perspective to every project.</p>
+            <a href="CV.html" class="button">View My Resume</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Leo's Portfolio. All rights reserved.</p>
+    </footer>
 </body>
+
+</html>
