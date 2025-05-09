@@ -70,6 +70,17 @@ nav {
     color: #e74c3c;
 }
 
+.logo img {
+    height: 50px;
+    /* justera storlek efter behov */
+    transition: filter 0.3s ease;
+}
+
+.logo img:hover {
+    filter: brightness(0.8);
+    /* gör bilden mörkare vid hover */
+}
+
 /* Off-screen Menu */
 .off-screen-menu {
     background-color: rgba(0, 0, 0, 0.95);
@@ -375,5 +386,31 @@ footer {
 
     .category-image {
         height: 220px;
+    }
+}
+
+/* Fix for hamburger menu on mobile */
+@media (max-width: 767px) {
+    .ham-menu {
+        height: 30px;
+        width: 30px;
+    }
+
+    .ham-menu.active span:nth-child(1) {
+        transform: translateY(13px) rotate(45deg);
+    }
+
+    .ham-menu.active span:nth-child(3) {
+        transform: translateY(-13px) rotate(-45deg);
+    }
+
+    .off-screen-menu {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .off-screen-menu li {
+        font-size: 1.5rem;
+        margin: 1rem 0;
     }
 }
