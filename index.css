@@ -11,6 +11,13 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+}
+
+body.menu-open {
+    overflow: hidden;
+    /* Prevent scrolling when menu is open */
 }
 
 h1,
@@ -28,16 +35,27 @@ a {
     color: inherit;
 }
 
+img {
+    max-width: 100%;
+    /* Ensure images don't overflow containers */
+    height: auto;
+    display: block;
+}
+
 /* Header and Navigation */
 nav {
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #111;
     color: white;
-    position: relative;
+    position: sticky;
+    /* Keep nav fixed at top when scrolling */
+    top: 0;
     z-index: 100;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo a {
@@ -45,6 +63,11 @@ nav {
     font-size: 1.8rem;
     font-weight: 700;
     color: #fff;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #e74c3c;
 }
 
 /* Off-screen Menu */
@@ -52,16 +75,17 @@ nav {
     background-color: rgba(0, 0, 0, 0.95);
     height: 100vh;
     width: 100%;
-    max-width: 450px;
+    max-width: 300px;
     position: fixed;
     z-index: 10;
     top: 0;
-    right: -450px;
+    right: -300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: 0.3s ease;
+    transition: 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .off-screen-menu.active {
@@ -71,11 +95,12 @@ nav {
 .off-screen-menu ul {
     list-style: none;
     text-align: center;
+    width: 100%;
 }
 
 .off-screen-menu li {
     margin: 1.5rem 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     transition: color 0.3s ease;
 }
@@ -88,12 +113,13 @@ nav {
     color: inherit;
     display: block;
     padding: 0.5rem 1rem;
+    width: 100%;
 }
 
 /* Hamburger Menu */
 .ham-menu {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     position: relative;
     z-index: 11;
     cursor: pointer;
@@ -103,7 +129,7 @@ nav {
 }
 
 .ham-menu span {
-    height: 4px;
+    height: 3px;
     width: 100%;
     background-color: #e74c3c;
     border-radius: 25px;
@@ -111,7 +137,7 @@ nav {
 }
 
 .ham-menu.active span:nth-child(1) {
-    transform: translateY(16px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);
 }
 
 .ham-menu.active span:nth-child(2) {
@@ -119,7 +145,7 @@ nav {
 }
 
 .ham-menu.active span:nth-child(3) {
-    transform: translateY(-16px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg);
 }
 
 /* Content Area */
@@ -131,6 +157,8 @@ nav {
 
 .content.blur {
     filter: blur(5px);
+    pointer-events: none;
+    /* Prevent interaction with blurred content */
 }
 
 /* Hero Section */
@@ -138,7 +166,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 2rem;
+    padding: 2rem 1.5rem;
     background-color: #5B0000;
     color: white;
     text-align: center;
@@ -149,18 +177,18 @@ nav {
 }
 
 .hero-text h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-text p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     opacity: 0.9;
 }
 
 .hero-image {
     width: 100%;
-    max-width: 800px;
+    max-width: 350px;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -174,21 +202,21 @@ nav {
 
 /* Project Categories Section */
 .project-categories {
-    padding: 4rem 2rem;
+    padding: 3rem 1.5rem;
     background-color: #fff;
     text-align: center;
 }
 
 .project-categories h2 {
     margin-bottom: 2rem;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #333;
 }
 
 .category-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -196,7 +224,7 @@ nav {
 
 .category-box {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
@@ -205,13 +233,13 @@ nav {
 }
 
 .category-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .category-image {
     width: 100%;
-    height: 220px;
+    height: 180px;
     object-fit: cover;
 }
 
@@ -228,7 +256,7 @@ nav {
 
 /* About Brief Section */
 .about-brief {
-    padding: 4rem 2rem;
+    padding: 3rem 1.5rem;
     background-color: #f9f9f9;
     text-align: center;
     max-width: 800px;
@@ -237,12 +265,12 @@ nav {
 
 .about-brief h2 {
     margin-bottom: 1rem;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 }
 
 .about-brief p {
     margin-bottom: 2rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.7;
 }
 
@@ -269,7 +297,13 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive Adjustments */
+/* Pointer cursor for clickable elements */
+.pointer {
+    cursor: pointer;
+}
+
+/* Media Queries for Responsive Design */
+/* Tablet and Above */
 @media (min-width: 768px) {
     .hero {
         flex-direction: row;
@@ -284,12 +318,62 @@ footer {
         margin-bottom: 0;
     }
 
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text p {
+        font-size: 1.5rem;
+    }
+
     .hero-image {
         flex: 1;
+        max-width: 450px;
+    }
+
+    .category-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav {
+        padding: 1rem 2rem;
+    }
+
+    .project-categories {
+        padding: 4rem 2rem;
+    }
+
+    .about-brief {
+        padding: 4rem 2rem;
+    }
+
+    .about-brief p {
+        font-size: 1.1rem;
     }
 }
 
-/* Pointer cursor for clickable elements */
-.pointer {
-    cursor: pointer;
+/* Larger Screens */
+@media (min-width: 1024px) {
+    .off-screen-menu {
+        max-width: 350px;
+        right: -350px;
+    }
+
+    .off-screen-menu li {
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        padding: 5rem 4rem;
+    }
+
+    .category-box {
+        max-width: 400px;
+    }
+
+    .category-image {
+        height: 220px;
+    }
 }

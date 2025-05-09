@@ -384,3 +384,147 @@ footer {
 .pointer {
     cursor: pointer;
 }
+
+/* Enhanced Mobile Responsiveness */
+
+/* Base responsive adjustments */
+@media (max-width: 767px) {
+    .resume-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .resume-header p {
+        font-size: 1rem;
+    }
+
+    .resume-container {
+        padding: 0 1rem;
+    }
+
+    .sidebar,
+    .main-content {
+        padding: 1.5rem;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experience-header .date {
+        margin-top: 0.2rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Small phone adjustments */
+@media (max-width: 480px) {
+    .resume-header {
+        padding: 2rem 1rem;
+    }
+
+    .resume-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .resume-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .experience-item h3,
+    .education-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Fix for hamburger menu on mobile */
+@media (max-width: 767px) {
+    .ham-menu {
+        height: 30px;
+        width: 30px;
+    }
+
+    .ham-menu.active span:nth-child(1) {
+        transform: translateY(13px) rotate(45deg);
+    }
+
+    .ham-menu.active span:nth-child(3) {
+        transform: translateY(-13px) rotate(-45deg);
+    }
+
+    .off-screen-menu {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .off-screen-menu li {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+}
+
+/* Improved touch targets for mobile */
+@media (max-width: 767px) {
+    nav {
+        padding: 0.8rem 1rem;
+    }
+
+    .off-screen-menu a {
+        padding: 0.8rem 1rem;
+    }
+
+    .resume-action {
+        margin: 2rem 0;
+    }
+
+    .button {
+        display: block;
+        margin: 0 auto;
+        max-width: 80%;
+    }
+}
+
+/* Fix for skill bars on mobile */
+@media (max-width: 767px) {
+    .skill-bar {
+        height: 8px;
+    }
+}
+
+/* Portrait orientation specific adjustments */
+@media (max-width: 767px) and (orientation: portrait) {
+    .resume-container {
+        gap: 1rem;
+    }
+
+    .sidebar {
+        margin-bottom: 0;
+    }
+}
+
+/* Fix hamburger.js implementation */
+.menu-open {
+    overflow: hidden;
+}
+
+.menu-open .off-screen-menu {
+    right: 0;
+}
+
+.menu-open .content {
+    filter: blur(5px);
+}
