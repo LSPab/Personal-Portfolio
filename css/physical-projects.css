@@ -101,38 +101,6 @@ nav {
     padding: 0.5rem 1rem;
 }
 
-/* Hamburger Menu */
-.ham-menu {
-    height: 40px;
-    width: 40px;
-    position: relative;
-    z-index: 11;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.ham-menu span {
-    height: 4px;
-    width: 100%;
-    background-color: #e74c3c;
-    border-radius: 25px;
-    transition: 0.3s ease;
-}
-
-.ham-menu.active span:nth-child(1) {
-    transform: translateY(16px) rotate(45deg);
-}
-
-.ham-menu.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.ham-menu.active span:nth-child(3) {
-    transform: translateY(-16px) rotate(-45deg);
-}
-
 /* Content Area */
 .content {
     transition: filter 0.3s ease;

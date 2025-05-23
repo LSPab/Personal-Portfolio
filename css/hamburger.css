@@ -1,0 +1,170 @@
+/* ===================================================== */
+/* HAMBURGER MENU CSS - hamburger.css */
+/* ===================================================== */
+
+/* Off-screen Menu Styles */
+.off-screen-menu {
+    background-color: rgba(0, 0, 0, 0.95);
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: -450px;
+    /* Hidden by default */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+/* Active state - menu slides in */
+.off-screen-menu.active {
+    right: 0;
+}
+
+.off-screen-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.off-screen-menu li {
+    margin: 1.5rem 0;
+    font-size: 2rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.off-screen-menu li:hover {
+    color: #e74c3c;
+}
+
+.off-screen-menu a {
+    color: inherit;
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+/* Hamburger Menu Icon Styles */
+.ham-menu {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    z-index: 11;
+    /* Above the off-screen menu */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ham-menu span {
+    height: 4px;
+    width: 100%;
+    background-color: #e74c3c;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+/* Hamburger animation when active (transforms to X) */
+.ham-menu.active span:nth-child(1) {
+    transform: translateY(16px) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+    /* Middle line disappears */
+}
+
+.ham-menu.active span:nth-child(3) {
+    transform: translateY(-16px) rotate(-45deg);
+}
+
+/* Content blur effect when menu is open */
+.content {
+    transition: filter 0.3s ease;
+    min-height: calc(100vh - 80px - 60px);
+}
+
+.content.blur {
+    filter: blur(5px);
+}
+
+/* Pointer cursor for clickable elements */
+.pointer {
+    cursor: pointer;
+}
+
+/* ===================================================== */
+/* RESPONSIVE DESIGN - MOBILE/PHONE MODE */
+/* ===================================================== */
+
+/* Mobile adjustments for screens 768px and below */
+@media (max-width: 768px) {
+
+    /* Off-screen menu mobile adjustments */
+    .off-screen-menu {
+        max-width: 100%;
+        /* Full width on very small screens */
+        width: 100%;
+    }
+
+    .off-screen-menu li {
+        margin: 1.2rem 0;
+        /* Slightly reduced spacing */
+        font-size: 1.8rem;
+        /* Slightly smaller text */
+    }
+
+    /* Hamburger menu mobile adjustments */
+    .ham-menu {
+        height: 35px;
+        /* Slightly smaller hamburger */
+        width: 35px;
+    }
+
+    .ham-menu span {
+        height: 3px;
+        /* Thinner lines on mobile */
+    }
+
+    /* Adjust transform values for smaller hamburger */
+    .ham-menu.active span:nth-child(1) {
+        transform: translateY(14px) rotate(45deg);
+    }
+
+    .ham-menu.active span:nth-child(3) {
+        transform: translateY(-14px) rotate(-45deg);
+    }
+}
+
+/* Extra small screens (phones in portrait) */
+@media (max-width: 480px) {
+
+    /* Further mobile optimizations */
+    .off-screen-menu li {
+        font-size: 1.6rem;
+        margin: 1rem 0;
+    }
+
+    /* Ensure hamburger menu stays accessible */
+    .ham-menu {
+        height: 32px;
+        width: 32px;
+    }
+
+    .ham-menu span {
+        height: 2.5px;
+    }
+
+    /* Adjust transform values for smallest hamburger */
+    .ham-menu.active span:nth-child(1) {
+        transform: translateY(12px) rotate(45deg);
+    }
+
+    .ham-menu.active span:nth-child(3) {
+        transform: translateY(-12px) rotate(-45deg);
+    }
+}

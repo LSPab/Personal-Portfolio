@@ -81,84 +81,6 @@ nav {
     /* gör bilden mörkare vid hover */
 }
 
-/* Off-screen Menu */
-.off-screen-menu {
-    background-color: rgba(0, 0, 0, 0.95);
-    height: 100vh;
-    width: 100%;
-    max-width: 300px;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    right: -300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s ease-in-out;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.off-screen-menu.active {
-    right: 0;
-}
-
-.off-screen-menu ul {
-    list-style: none;
-    text-align: center;
-    width: 100%;
-}
-
-.off-screen-menu li {
-    margin: 1.5rem 0;
-    font-size: 1.5rem;
-    color: white;
-    transition: color 0.3s ease;
-}
-
-.off-screen-menu li:hover {
-    color: #e74c3c;
-}
-
-.off-screen-menu a {
-    color: inherit;
-    display: block;
-    padding: 0.5rem 1rem;
-    width: 100%;
-}
-
-/* Hamburger Menu */
-.ham-menu {
-    height: 30px;
-    width: 30px;
-    position: relative;
-    z-index: 11;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.ham-menu span {
-    height: 3px;
-    width: 100%;
-    background-color: #e74c3c;
-    border-radius: 25px;
-    transition: 0.3s ease;
-}
-
-.ham-menu.active span:nth-child(1) {
-    transform: translateY(13px) rotate(45deg);
-}
-
-.ham-menu.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.ham-menu.active span:nth-child(3) {
-    transform: translateY(-13px) rotate(-45deg);
-}
-
 /* Content Area */
 .content {
     transition: filter 0.3s ease;
@@ -367,15 +289,6 @@ footer {
 
 /* Larger Screens */
 @media (min-width: 1024px) {
-    .off-screen-menu {
-        max-width: 350px;
-        right: -350px;
-    }
-
-    .off-screen-menu li {
-        font-size: 1.8rem;
-    }
-
     .hero {
         padding: 5rem 4rem;
     }
@@ -386,31 +299,5 @@ footer {
 
     .category-image {
         height: 220px;
-    }
-}
-
-/* Fix for hamburger menu on mobile */
-@media (max-width: 767px) {
-    .ham-menu {
-        height: 30px;
-        width: 30px;
-    }
-
-    .ham-menu.active span:nth-child(1) {
-        transform: translateY(13px) rotate(45deg);
-    }
-
-    .ham-menu.active span:nth-child(3) {
-        transform: translateY(-13px) rotate(-45deg);
-    }
-
-    .off-screen-menu {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .off-screen-menu li {
-        font-size: 1.5rem;
-        margin: 1rem 0;
     }
 }

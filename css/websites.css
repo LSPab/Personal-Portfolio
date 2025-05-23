@@ -58,92 +58,6 @@ nav {
     /* gör bilden mörkare vid hover */
 }
 
-/* Off-screen Menu */
-.off-screen-menu {
-    background-color: rgba(0, 0, 0, 0.95);
-    height: 100vh;
-    width: 100%;
-    max-width: 450px;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    right: -450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s ease;
-}
-
-.off-screen-menu.active {
-    right: 0;
-}
-
-.off-screen-menu ul {
-    list-style: none;
-    text-align: center;
-}
-
-.off-screen-menu li {
-    margin: 1.5rem 0;
-    font-size: 2rem;
-    color: white;
-    transition: color 0.3s ease;
-}
-
-.off-screen-menu li:hover {
-    color: #e74c3c;
-}
-
-.off-screen-menu a {
-    color: inherit;
-    display: block;
-    padding: 0.5rem 1rem;
-}
-
-/* Hamburger Menu */
-.ham-menu {
-    height: 40px;
-    width: 40px;
-    position: relative;
-    z-index: 11;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.ham-menu span {
-    height: 4px;
-    width: 100%;
-    background-color: #e74c3c;
-    border-radius: 25px;
-    transition: 0.3s ease;
-}
-
-.ham-menu.active span:nth-child(1) {
-    transform: translateY(16px) rotate(45deg);
-}
-
-.ham-menu.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.ham-menu.active span:nth-child(3) {
-    transform: translateY(-16px) rotate(-45deg);
-}
-
-/* Content Area */
-.content {
-    transition: filter 0.3s ease;
-    min-height: calc(100vh - 80px - 60px);
-    /* Subtract header and footer heights */
-}
-
-.content.blur {
-    filter: blur(5px);
-}
-
 /* Page Header */
 .page-header {
     padding: 3rem 2rem;
@@ -391,16 +305,165 @@ footer {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .slideshow-container {
-        max-width: 100%;
+
+    /* Navigation adjustments */
+    nav {
+        padding: 0.8rem 1.5rem;
+        /* Reduced padding for mobile */
     }
 
+    .logo img {
+        height: 40px;
+        /* Smaller logo on mobile */
+    }
+
+    /* Page header mobile adjustments */
+    .page-header {
+        padding: 2rem 1rem;
+        /* Reduced padding */
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem;
+        /* Smaller heading */
+    }
+
+    .page-header p {
+        font-size: 1.2rem;
+        /* Smaller subtitle */
+    }
+
+    /* Content sections mobile adjustments */
+    .featured-project,
+    .project-grid {
+        padding: 2.5rem 1rem;
+        /* Reduced padding */
+    }
+
+    .featured-project h2,
+    .project-grid h2 {
+        font-size: 2rem;
+        /* Smaller section headings */
+    }
+
+    /* Slideshow mobile adjustments */
+    .slideshow-container {
+        max-width: 100%;
+        margin: 0 0 1.5rem;
+        /* Reduced bottom margin */
+        border-radius: 8px;
+        /* Slightly smaller border radius */
+    }
+
+    .prev-btn,
+    .next-btn {
+        width: 40px;
+        /* Smaller navigation buttons */
+        height: 40px;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .prev-btn {
+        left: 10px;
+        /* Closer to edge */
+    }
+
+    .next-btn {
+        right: 10px;
+        /* Closer to edge */
+    }
+
+    .slide-caption {
+        padding: 0.8rem;
+        /* Reduced caption padding */
+        font-size: 1rem;
+        /* Smaller caption text */
+    }
+
+    /* Project cards mobile adjustments */
     .projects-container {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        /* Reduced gap */
+    }
+
+    .project-card img {
+        height: 180px;
+        /* Slightly smaller card images */
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+        /* Smaller card titles */
+        padding: 0.8rem 0.8rem 0.4rem;
+    }
+
+    .project-card p {
+        padding: 0 0.8rem 0.8rem;
+        /* Adjusted padding */
+        font-size: 0.9rem;
+        /* Slightly smaller text */
+    }
+
+    .project-card .tech-stack {
+        padding: 0 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .project-card .button {
+        margin: 0 0.8rem 0.8rem;
+    }
+
+    /* Project description mobile adjustments */
+    .project-description {
+        margin: 1.5rem auto 0;
+        padding: 1.5rem;
+    }
+
+    .project-description h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Tech tags mobile adjustments */
+    .tech-tag {
+        padding: 0.25rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    /* Button mobile adjustments */
+    .button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* Footer mobile adjustments */
+    footer {
+        padding: 1.2rem;
+        font-size: 0.8rem;
     }
 }
 
-/* Pointer cursor for clickable elements */
-.pointer {
-    cursor: pointer;
+/* Extra small screens (phones in portrait) */
+@media (max-width: 480px) {
+
+    /* Further mobile optimizations */
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+        /* Single column on very small screens */
+        gap: 1rem;
+    }
+
+    .project-card {
+        margin: 0 0.5rem;
+        /* Small side margins */
+    }
 }

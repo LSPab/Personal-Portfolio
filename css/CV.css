@@ -53,98 +53,17 @@ nav {
 
 .logo img {
     height: 50px;
-    /* justera storlek efter behov */
     transition: filter 0.3s ease;
 }
 
 .logo img:hover {
     filter: brightness(0.8);
-    /* gör bilden mörkare vid hover */
-}
-
-/* Off-screen Menu */
-.off-screen-menu {
-    background-color: rgba(0, 0, 0, 0.95);
-    height: 100vh;
-    width: 100%;
-    max-width: 450px;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    right: -450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s ease;
-}
-
-.off-screen-menu.active {
-    right: 0;
-}
-
-.off-screen-menu ul {
-    list-style: none;
-    text-align: center;
-}
-
-.off-screen-menu li {
-    margin: 1.5rem 0;
-    font-size: 2rem;
-    color: white;
-    transition: color 0.3s ease;
-}
-
-.off-screen-menu li:hover {
-    color: #e74c3c;
-}
-
-.off-screen-menu a {
-    color: inherit;
-    display: block;
-    padding: 0.5rem 1rem;
-}
-
-/* Hamburger Menu */
-.ham-menu {
-    height: 40px;
-    width: 40px;
-    position: relative;
-    z-index: 11;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.ham-menu span {
-    height: 4px;
-    width: 100%;
-    background-color: #e74c3c;
-    border-radius: 25px;
-    transition: 0.3s ease;
-}
-
-.ham-menu.active span:nth-child(1) {
-    transform: translateY(16px) rotate(45deg);
-}
-
-.ham-menu.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.ham-menu.active span:nth-child(3) {
-    transform: translateY(-16px) rotate(-45deg);
 }
 
 /* Content Area */
 .content {
     transition: filter 0.3s ease;
     min-height: calc(100vh - 80px - 60px);
-}
-
-.content.blur {
-    filter: blur(5px);
 }
 
 /* Resume Header */
@@ -397,8 +316,6 @@ footer {
 }
 
 /* Enhanced Mobile Responsiveness */
-
-/* Base responsive adjustments */
 @media (max-width: 767px) {
     .resume-header h1 {
         font-size: 1.8rem;
@@ -426,9 +343,22 @@ footer {
         margin-top: 0.2rem;
         margin-bottom: 0.5rem;
     }
+
+    .resume-action {
+        margin: 2rem 0;
+    }
+
+    .button {
+        display: block;
+        margin: 0 auto;
+        max-width: 80%;
+    }
+
+    .skill-bar {
+        height: 8px;
+    }
 }
 
-/* Small phone adjustments */
 @media (max-width: 480px) {
     .resume-header {
         padding: 2rem 1rem;
@@ -462,61 +392,6 @@ footer {
     }
 }
 
-/* Fix for hamburger menu on mobile */
-@media (max-width: 767px) {
-    .ham-menu {
-        height: 30px;
-        width: 30px;
-    }
-
-    .ham-menu.active span:nth-child(1) {
-        transform: translateY(13px) rotate(45deg);
-    }
-
-    .ham-menu.active span:nth-child(3) {
-        transform: translateY(-13px) rotate(-45deg);
-    }
-
-    .off-screen-menu {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .off-screen-menu li {
-        font-size: 1.5rem;
-        margin: 1rem 0;
-    }
-}
-
-/* Improved touch targets for mobile */
-@media (max-width: 767px) {
-    nav {
-        padding: 0.8rem 1rem;
-    }
-
-    .off-screen-menu a {
-        padding: 0.8rem 1rem;
-    }
-
-    .resume-action {
-        margin: 2rem 0;
-    }
-
-    .button {
-        display: block;
-        margin: 0 auto;
-        max-width: 80%;
-    }
-}
-
-/* Fix for skill bars on mobile */
-@media (max-width: 767px) {
-    .skill-bar {
-        height: 8px;
-    }
-}
-
-/* Portrait orientation specific adjustments */
 @media (max-width: 767px) and (orientation: portrait) {
     .resume-container {
         gap: 1rem;
@@ -525,17 +400,4 @@ footer {
     .sidebar {
         margin-bottom: 0;
     }
-}
-
-/* Fix hamburger.js implementation */
-.menu-open {
-    overflow: hidden;
-}
-
-.menu-open .off-screen-menu {
-    right: 0;
-}
-
-.menu-open .content {
-    filter: blur(5px);
 }
