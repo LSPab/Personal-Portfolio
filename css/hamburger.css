@@ -10,14 +10,16 @@
     max-width: 450px;
     position: fixed;
     z-index: 10;
-    top: 0;
     right: -450px;
     /* Hidden by default */
+    top: 0;
     display: flex;
+    /* Always flex, but positioned off-screen */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: 0.3s ease;
+    transition: right 0.3s ease;
+    /* Only animate the position */
 }
 
 /* Active state - menu slides in */
@@ -109,6 +111,8 @@
         max-width: 100%;
         /* Full width on very small screens */
         width: 100%;
+        right: -100%;
+        /* Hide completely off-screen */
     }
 
     .off-screen-menu li {
